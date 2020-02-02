@@ -11,11 +11,11 @@ async function oktaAuth(req, res, next) {
     if (!token) {
       return res.status(401).send('Not Authorized');
     }
-    const jwt = await oktaJwtVerifier.verifyAccessToken(token, ['api://default']);
-    req.user = {
-      uid: jwt.claims.uid,
-      email: jwt.claims.sub
-    };
+    // const jwt = await oktaJwtVerifier.verifyAccessToken(token, ['api://default']);
+    // req.user = {
+    //   uid: jwt.claims.uid,
+    //   email: jwt.claims.sub
+    // };
     next();
   }
   catch (err) {
